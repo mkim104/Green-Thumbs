@@ -27,7 +27,9 @@ header {
     color: #fff;
     font-weight: bold;
     font-size: 35px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    -webkit-text-stroke-width: 0.3px;
+    -webkit-text-stroke-color: black;
 }
 
 nav {
@@ -39,7 +41,6 @@ nav {
 nav ul {
     line-height: 60px;
     list-style: none;
-    background: rgba(0, 0, 0, 0);
     overflow: hidden;
     color: #fff;
     padding: 0;
@@ -61,7 +62,9 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-size: 16px;
+    font-size: 20px;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
 }
 
 .menu-icon {
@@ -78,9 +81,6 @@ nav ul li a {
 
 @media(max-width: 700px) {
 
-    nav.black ul {
-          background: #000;
-    }
 
     .showing {
           max-height: 34em;
@@ -96,12 +96,13 @@ nav ul li a {
     .logo {
         position: fixed;
         top: 0;
-        margin-top: 16px;
+        margin-top: 3px;
+        font-size: 20px;
     }
 
      nav ul {
         max-height: 0px;
-        background: #000;
+        background: rgba(153, 187, 164, 0.822);
     }
 
     .menu-icon {
