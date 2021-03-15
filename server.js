@@ -32,9 +32,7 @@ app.use(session({
     store: new MongoStore({mongooseConnection: mongoose.connection})
 }));
 
-app.get('/', function(req, res, next) {
-    res.render('index');
-});
+require('./controllers/user')(app);
 
 app.listen(8000, function() {
     console.log('App running on port 8000');
