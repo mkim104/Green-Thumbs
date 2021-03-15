@@ -3,6 +3,7 @@ CSCI1320 Final Group Project
 
 
 March 15 2021:
+
 -Made sign up page/login page
 
 -To DO: Style login and signup page. I made respective css files in public/css. Let's make it pretty.
