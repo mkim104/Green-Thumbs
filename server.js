@@ -7,18 +7,20 @@ var engine = require('ejs-mate');
 var session = require('express-session');
 var mongoose = require('mongoose');
 var MongoStore = require('connect-mongo')(session);
-
+var passport = require('passport');
+var flash = require('connect-flash');
 
 var app = express();
 
 //creating database
-mongoose.connect('mongodb://localhost:27017/Green-Thumbs', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost:27017/Green-Thumbs', {useNewUrlParser: true, useUnifiedTopology: true}).catch(error => console.log(error));
+
+require('./config/passport');
 
 //setting up middleware
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
@@ -32,7 +34,14 @@ app.use(session({
     store: new MongoStore({mongooseConnection: mongoose.connection})
 }));
 
-require('./controllers/user')(app);
+//add passport middleware after 
+app.use(flash());
+
+//set up passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./controllers/user')(app, passport);
 
 app.listen(8000, function() {
     console.log('App running on port 8000');
