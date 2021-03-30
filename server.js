@@ -42,6 +42,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./controllers/user')(app, passport);
+require('./controllers/organization')(app);
+
+
 
 app.listen(8000, function() {
     console.log('App running on port 8000');
