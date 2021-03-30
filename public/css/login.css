@@ -1,0 +1,44 @@
+body {
+    /* font-family: "Helvetica Neue",sans-serif; */
+    font-family: 'Gudea', sans-serif;
+    font-weight: lighter;
+    background-color: rgb(218, 248, 218);
+}
+
+
+.container {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+}
+
+.loginContainer {
+    overflow: hidden;
+    background-color: white;
+    margin: auto auto;
+    padding: 7vh 6vw 7vh 6vw;
+    border-radius: 10px;
+    text-align: center;
+    width: 22vw;
+}
+
+.login {
+    font-size: 3.5vw;
+}
+
+.subtitle {
+    font-size: 1vw;
+}
+
+.facebookButton {
+    display: inline-block;
+    font-size: 1vw;
+    padding: 1vh 2vw 1vh 1vw;
+    background: #3A5A97;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,20,.4);
+    text-decoration: none;
+    line-height: 1;
+    position: relative;
+    border-radius: 5px;
+}

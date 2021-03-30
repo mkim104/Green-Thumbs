@@ -1,15 +1,17 @@
 <% layout('layout') %>
 <link href="css/signup.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
 <div class="container">
-    <div class="text-center">
-        <h1><a href="/">Green Thumbs Home</a></h1>
-    </div> 
-   <div class="col-md-offset-4">
-         <a href="/auth/facebook" class="facebook login">
-            <i class="facebook pic"></i> Sign up with Facebook
+    <div class="signupContainer">
+        <span class="signup">Sign Up</span>
+        <p class="subtitle">Clean, green eating has never been so easy!</p>
+        <a href="/auth/facebook" class="facebookButton">
+            <i class="fab fa-facebook-square fa-lg"></i> Sign up with Facebook
         </a>
-    </div><br>
-   <div class="text-center">
-        <h2 class="signup"><span>SIGN UP</span></h2>
-   </div><br>
+    <!-- copy over the navbar from the home screen instead  -->
+   <!-- <div class="homeButton">
+    <a href="/"><button>Green Thumbs Home</button></a>
+    </div>  -->
+    </div>
 </div>
