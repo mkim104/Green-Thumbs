@@ -1,7 +1,10 @@
 # Green-Thumbs
 CSCI1320 Final Group Project
 
+March 30 2021:
 
+-Completed front end design for login and signup pages
+-To Do: Add nav bar on homepage to all linked pages
 March 15 2021:
 
 -Made sign up page/login page
