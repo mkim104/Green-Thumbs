@@ -1,0 +1,117 @@
+<% layout('layout3') %>
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <div class="sidebar-brand">
+                <a href="/home">Green Thumbs</a>
+            </div>
+            <ul class="sidebar-nav">
+                <img src="http://placehold.it/100x100" class="img-responsive img-circle profile_img" alt="">
+                <div class="profile_info">
+                    <span>Welcome Back </span>
+                    <h2>
+                        <%= user.fullname %>
+                    </h2>
+                </div>
+                <li>
+                    <a href="/home">
+                        <i class="fa fa-home">Home</i>
+                    </a>
+                    <a href="/organizations">
+                        <i class="fa fa-building-o">Organizations</i>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-search">Search Organizations</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right nav_bar">
+                <li><a href="/logout">Log Out</a></li>
+            </ul>
+        </div>
+        <div id="page-content-wrapper">
+            <!-- <div class="ul_links">
+                <ul>
+                    <li>
+                        <a href="/home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/home">Organization</a>
+                    </li>
+                    <li>
+                        <a href="/home">Register Organization</a>
+                    </li>
+                </ul>
+            </div> -->
+            <div class="bodyDiv">
+                <h2>Organization Profile</h2>
+                <div class="row mainDiv">
+                    <div class="innerDiv">
+                        <div class="col-md-3" style="margin-bottom: 30px;">
+                            <img src="/uploads/<%= data.image %>" class="organizationListItemLogo" alt="Company image">
+                            <h3>
+                                <%= data.name %>
+                            </h3>
+                            <i class="fa fa-building-o">
+                                <%= data.sector %>
+                            </i>
+                            <br>
+                            <i class="fa fa-map-marker">
+                                <%= data.city %>, <%= data.country %>
+                            </i>
+                            <br>
+                            <i class="fa fa-external-link">
+                                <a href="http://<%= data.website %>" target="_blank">
+                                    http://<%= data.website %>
+                                </a>
+                            </i>
+                            <br><br>
+                            <a href="/review/<%= data._id %>" class="btn">Create a Review / Rating</a><br>
+                            <a href="" class="btn">View Employees</a><br>
+                            <a href="/organization/register-employee/<%= id %>" class="btn">Register as an
+                                Employee</a><br>
+
+                            <br>
+                            <h4>Average Thumbs: <%= average %>
+                            </h4>
+                            <span class="thumb" data-score="<%= average %>"></span>
+                            <p>
+                                <%= data.ratingNumber.length %> review(s) total
+                            </p>
+                        </div>
+                        <div class="col-md-9 colDiv">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="count">
+                                        <h1>
+                                            <%= data.ratingNumber.length %>
+                                        </h1>
+                                        <h2>Ratings</h2>
+                                        <h3>Total Ratings Received</h3>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="count">
+                                        <h1>
+                                            <%= data.ratingSum %>
+                                        </h1>
+                                        <h2>Total Thumbs</h2>
+                                        <h3>Total Thumbs Received</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>

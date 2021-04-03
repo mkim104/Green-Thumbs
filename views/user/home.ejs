@@ -1,59 +1,67 @@
 <% layout('layout2') %>
     <div id="wrapper">
-    <div id="sidebar-wrapper">
-        <div class="sidebar-brand"> 
-            <a href = "/home">Green Thumbs</a>
-        </div>
-        <ul class="sidebar-nav">         
-            <img src = "http://placehold.it/100x100" class = "img-responsive img-circle profile_img" alt = "">
-            <div class="profile_info">         
-                <span>Welcome Back </span>      
-                <h2><%= user.fullname %></h2>
+        <div id="sidebar-wrapper">
+            <div class="sidebar-brand">
+                <a href="/home">Green Thumbs</a>
             </div>
-            <li>
-                <a href = "/home">
-                    <i class = "fa fa-home">Home</i>
-                </a>
-                <a href = "">
-                    <i class = "fa fa-building-o">Organizations</i>
-                </a>
-                <a href = "">
-                    <i class = "fa fa-search">Search Organizations</i>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+            <ul class="sidebar-nav">
+                <img src="http://placehold.it/100x100" class="img-responsive img-circle profile_img" alt="">
+                <div class="profile_info">
+                    <span> </span>
+                    <h2>
+                        <%= user.fullname %>
+                    </h2>
+                </div>
+                <li>
+                    <a href="/home">
+                        <i class="fa fa-home">Home</i>
+                    </a>
+                    <a href="/organizations">
+                        <i class="fa fa-building-o">Organizations</i>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-search">Search Organizations</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right nav_bar">
+                <li><a href="/logout">Log Out</a></li>
+            </ul>
+        </div>
+        <div id="page-content-wrapper">
+            <div class="container-fluid main_body main_body">
+                <h1>Hello, <%= user.fullname %>
+                </h1>
+                <p>What would you like to do today?</p>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="info-icon"></div>
+                        <h3 class="text-center">Add an Organization</h3>
+                        <p class="text-center">Add an organization profile</p>
+                        <a href="/organization/create" class="btn btn-block btn-primary link_btn">Add!</a>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="info-icon"></div>
+                        <h3 class="text-center">Search</h3>
+                        <p class="text-center">Search through organizations</p>
+                        <a href="" class="btn btn-block btn-primary link_btn">Search!</a>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="info-icon"></div>
+                        <h3 class="text-center">Give a Review</h3>
+                        <p class="text-center">Review and Rate organizations</p>
+                        <a href="" class="btn btn-block btn-primary link_btn">Review!</a>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-    <div id="page-content-wrapper">
-        <div class="container-fluid main_body main_body">
-           <h1>Hello, <%= user.fullname %></h1>
-           <p>What would you like to do today?</p>
-            
-           <div class = "row">
-               <div class = "col-md-4">
-                   <div class = "info-icon"></div>
-                   <h3 class = "text-center">Add an Organization</h3>
-                   <p class = "text-center">Add an organization profile</p>
-                   <a href = "/organization/create" class = "btn btn-block btn-primary link_btn">Add!</a>
-               </div> 
-               <div class = "col-md-4">
-                   <div class = "info-icon"></div>
-                   <h3 class = "text-center">Search</h3>
-                   <p class = "text-center">Search through organizations</p>
-                   <a href = "" class = "btn btn-block btn-primary link_btn">Search!</a>
-                </div> 
-                <div class = "col-md-4">
-                    <div class = "info-icon"></div>
-                    <h3 class = "text-center">Give a Review</h3>
-                    <p class = "text-center">Review and Rate organizations</p>
-                    <a href = "" class = "btn btn-block btn-primary link_btn">Review!</a>
-                 </div> 
-           </div>
-            
-        </div>
-    </div>
-</div>

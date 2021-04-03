@@ -3,19 +3,19 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 
 var userSchema = mongoose.Schema({
-    fullname: {type: String, required: true},
-    email: {type: String, required: true},
+    fullname: { type: String, required: true },
+    email: { type: String, required: true },
     //we wont set this to true as we will use google authentication
-    password: {type: String},
+    password: { type: String },
     //role of user
-    role: {type: String, default: ''},
-    company: {
-        name: {type: String, default: ''},
-        image: {type: String, default: ''}
+    role: { type: String, default: '' },
+    organization: {
+        name: { type: String, default: '' },
+        image: { type: String, default: '' }
     },
-    passwordResetToken: {type: String, default: ''},
-    passwordResetExpire: {type: Date, default: Date.now},
-    facebook: {type: String, default: ''},
+    passwordResetToken: { type: String, default: '' },
+    passwordResetExpire: { type: Date, default: Date.now },
+    facebook: { type: String, default: '' },
     tokens: Array
 });
 

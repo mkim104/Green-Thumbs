@@ -1,7 +1,7 @@
 //setting up modules and variables
 var express = require('express');
 var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+// var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var engine = require('ejs-mate');
 var session = require('express-session');
@@ -13,7 +13,7 @@ var flash = require('connect-flash');
 var app = express();
 
 //creating database
-mongoose.connect('mongodb://localhost:27017/Green-Thumbs', {useNewUrlParser: true, useUnifiedTopology: true}).catch(error => console.log(error));
+mongoose.connect('mongodb://localhost:27017/Green-Thumbs', { useNewUrlParser: true, useUnifiedTopology: true }).catch(error => console.log(error));
 
 require('./config/passport');
 
@@ -21,17 +21,18 @@ require('./config/passport');
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 app.use(cookieParser());
-app.use(bodyParser.json());
+app.use(express.urlencoded());
+app.use(express.json());
 app.use(express.static('public'));
 
 //cookies, saving session id
 app.use(session({
-    secret: 'testkey', 
+    secret: 'testkey',
     //save back to session store
     resave: false,
     saveUninitialized: false,
     //data saves in database even if page is refreshed
-    store: new MongoStore({mongooseConnection: mongoose.connection})
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
 //add passport middleware after 
@@ -43,9 +44,10 @@ app.use(passport.session());
 
 require('./controllers/user')(app, passport);
 require('./controllers/organization')(app);
+require('./controllers/review')(app);
 
 
 
-app.listen(8000, function() {
+app.listen(8000, function () {
     console.log('App running on port 8000');
 });

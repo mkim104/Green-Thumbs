@@ -1,8 +1,24 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <% include partials/header2 %>
+<html lang="en">
+<% include partials/header2 %>
+
     <body>
         <%- body -%>
-        <% include partials/togglebar %>
+            <% include partials/togglebar %>
+
+                <script src="/js/rating.js"></script>
+                <script src="/js/jquery.raty.js"></script>
+                <script>
+                    $(document).ready(() => {
+                        $.fn.raty.defaults.path = '/images/';
+                        $('.thumb').raty({
+                            readOnly: true,
+                            score: (data) => {
+                                return $(this).attr('data-score');
+                            }
+                        })
+                    })
+                </script>
     </body>
+
 </html>
