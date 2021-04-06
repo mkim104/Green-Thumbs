@@ -1,0 +1,44 @@
+<% layout('layout3') %>
+    <div id="wrapper">
+        <div id="page-content-wrapper">
+            <!-- <div class="ul_links">
+                <ul>
+                    <li>
+                        <a href="/home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/home">Organization</a>
+                    </li>
+                    <li>
+                        <a href="/home">Register Organization</a>
+                    </li>
+                </ul>
+            </div> -->
+            <div class="bodyDiv">
+                <h2>Organizations</h2>
+                <% for (var i=0; i < data.length; i++) { %>
+                    <div class="col-xs-12 col-md-6 col-lg-4 organizationListDiv">
+                        <div class="organization-info-container">
+                            <a href="/organizationprofile/<%= data[i]._id %>">
+                                <img src="/uploads/<%= data[i].image %>" class="organizationListItemLogo"
+                                    alt="Company logo">
+                                <div class="organizationListItemInfo">
+                                    <h5>
+                                        <%= data[i].name %>
+                                    </h5>
+                                    <span><i class="thumb"></i>*****</span><br>
+                                    <i class="fa fa-building-o">
+                                        <%= data[i].sector %>
+                                    </i>
+                                    <br>
+                                    <i class="fa fa-map-marker">
+                                        <%= data[i].city %>, <%= data[i].country %>
+                                    </i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+    </div>
