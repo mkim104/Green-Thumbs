@@ -38,8 +38,8 @@ module.exports = (app) => {
                     }, (err) => {
                         req.flash('success', 'Your review / rating has been successfully submitted.');
                         res.redirect('/review/' + req.params.id);
-                    })
+                    });
             }
-        ])
+        ]);
     });
-}
+};

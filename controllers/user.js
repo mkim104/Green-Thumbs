@@ -36,6 +36,26 @@ module.exports = (app) => {
         });
     });
 
+    app.get('/search', (req, res) => {
+        res.render('organization/search', {title: 'Find a Company', user:req.user});
+    });
+    
+    app.post('/reviews', (req, res) => {
+        var name = req.body.search;
+        var regex = new RegExp(name, 'i');
+        
+        Organization.find({'$or': [{'name':regex}]}, (err, data) => {
+
+            try {
+                res.redirect('/organizationprofile/'+data[0]._id);
+            }
+            catch(err) {
+                console.log(err);
+            }
+            
+        });
+    });
+
     app.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }));
 
     app.get('/auth/facebook/callback', passport.authenticate('facebook', {

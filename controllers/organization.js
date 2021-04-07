@@ -82,6 +82,26 @@ module.exports = (app) => {
         });
     });
 
+    app.get('/organization/search', (req, res) => {
+        res.render('organization/search', {title: 'Find a Company', user:req.user});
+    });
+    
+    app.post('/organization/search', (req, res) => {
+        var name = req.body.search;
+        var regex = new RegExp(name, 'i');
+        
+        Organization.find({'$or': [{'name':regex}]}, (err, data) => {
+
+            try {
+                res.redirect('/organization-profile/'+data[0]._id);
+            }
+            catch(err) {
+                console.log(err);
+            }
+            
+        });
+    });
+
     app.post('/organization/register-employee/:id', (req, res, next) => {
         async.parallel([
             function (callback) {
