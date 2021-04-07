@@ -101,49 +101,4 @@ module.exports = (app) => {
             
         });
     });
-
-    app.post('/organization/register-employee/:id', (req, res, next) => {
-        async.parallel([
-            function (callback) {
-                Organization.update({
-                    '_id': req.params.id,
-                    // not equal
-                    'employees.employeeId': { $ne: req.user._id }
-                },
-                    {
-                        $push: { employees: { employeeId: req.user._id, employeeFullname: req.user.fullname, employeeRole: req.body.role } }
-                    },
-                    (err, count) => {
-                        if (err) {
-                            return next(err);
-                        }
-                        callback(err, count);
-                    }
-                );
-            },
-
-            function (callback) {
-                async.waterfall([
-                    function (callback) {
-                        Organization.findOne({ '_id': req.params.id }, (err, data) => {
-                            callback(err, data);
-                        })
-                    },
-                    function (data, callback) {
-                        User.findOne({ '_id': req.user._id }, (err, result) => {
-                            result.role = req.body.role;
-                            result.company.name = data.name;
-                            result.company.image = data.image;
-
-                            result.save((err) => {
-                                res.redirect('/home');
-                            })
-
-                        })
-                    }
-                ]);
-            }
-        ])
-    })
-
 };
