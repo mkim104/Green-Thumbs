@@ -55,7 +55,7 @@ module.exports = (app) => {
                 res.redirect('/organizationprofile/'+data[0]._id);
             }
             catch(err) {
-                console.log(err);
+                console.log(err)
             }
             
         });
