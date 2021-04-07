@@ -15,7 +15,7 @@ $(document).ready(function () {
         // validate name (input can't be empty)
         if (name == '') {
             isValid = false;
-            $('#errorMsg1').html('<div class="alert alert-danger">Name field is empty</div>');
+            $('#errorMsg1').html('<div class="alert alert-danger">Organization name field is empty</div>');
         } else {
             $('#errorMsg1').html('');
         }
@@ -58,6 +58,14 @@ $(document).ready(function () {
             $('#errorMsg6').html('<div class="alert alert-danger">Website field is empty</div>');
         } else {
             $('#errorMsg6').html('');
+        }
+
+        // validate image (input can't be empty)
+        if (image == '') {
+            isValid = false;
+            $('#errorMsg7').html('<div class="alert alert-danger">Organization image field is empty</div>');
+        } else {
+            $('#errorMsg7').html('');
         }
 
         // if all inputs are valid, use ajax to send the data from the form to the server
