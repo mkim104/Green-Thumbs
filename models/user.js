@@ -5,7 +5,7 @@ var bcrypt = require('bcrypt-nodejs');
 var userSchema = mongoose.Schema({
     fullname: { type: String, required: true },
     email: { type: String, required: true },
-    //we wont set this to true as we will use google authentication
+    //we won't set this to true as we will use google authentication
     password: { type: String },
     //role of user
     role: { type: String, default: '' },

@@ -74,12 +74,31 @@
                             <br><br>
                             <a href="/review/<%= data._id %>" class="btn">Create a Review / Rating</a><br>
                             <br>
-                            <h4>Average Thumbs: <%= average %>
+                            <h4><b>Average Thumbs:</b><br><br>
+                                <%= average %> / 5.0
                             </h4>
                             <span class="thumb" data-score="<%= average %>"></span>
                             <p>
-                                <%= data.ratingNumber.length %> review(s) total
+                                based on <%= data.ratingNumber.length %> rating(s)
                             </p>
+                            <br>
+                            <h4><b>Reviews:</b></h4>
+                            <div class="review-container">
+                                <% for (var i=0; i < data.organizationRating.length; i++) { %>
+                                    <div class="review-card" style="margin-bottom: 5px;">
+                                        <div class="review-name">
+                                            Name: <%= data.organizationRating[i].userFullname %>
+                                        </div>
+                                        <div class="review-rating">
+                                            Rating: <%= data.organizationRating[i].userRating %>
+                                        </div>
+                                        <div class="review-content">
+                                            Review: <%= data.organizationRating[i].userReview %>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <% } %>
+                            </div>
                         </div>
                         <div class="col-md-9 colDiv">
                             <div class="row">
@@ -89,7 +108,6 @@
                                             <%= data.ratingNumber.length %>
                                         </h1>
                                         <h2>Ratings</h2>
-                                        <h3>Total Ratings Received</h3>
                                     </div>
                                 </div>
 
@@ -99,7 +117,6 @@
                                             <%= data.ratingSum %>
                                         </h1>
                                         <h2>Total Thumbs</h2>
-                                        <h3>Total Thumbs Received</h3>
                                     </div>
                                 </div>
                             </div>
@@ -110,4 +127,3 @@
 
         </div>
     </div>
-  

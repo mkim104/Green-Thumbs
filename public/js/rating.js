@@ -112,7 +112,7 @@ $(document).ready(function () {
                 success: function () {
                     $('#review').val('');
                     $('#sender').val('');
-                    $('#id').val();
+                    $('#id').val('');
                 }
             });
         } else {
