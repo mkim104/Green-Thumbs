@@ -1,0 +1,27 @@
+body {
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  background-color: rgb(160, 231, 166);
+}
+
+.button-ting {
+  border-radius: 10px;
+  background-color: rgb(160, 231, 166);
+  color: black;
+  border-style: none;
+  width: 200px;
+  justify-content: center;
+  margin-left: 280px;
+}
+
+.button-ting:hover {
+  background-color: rgb(160, 231, 166);
+  color: black;
+  border-style: none;
+  opacity: 75%;
+}
+
+.button-ting:active {
+  background-color: rgb(160, 231, 166);
+  color: black;
+  border-style: none;
+}
