@@ -5,6 +5,10 @@ body {
   background-color: rgb(160, 231, 166);
 }
 
+a {
+  text-decoration: none;
+}
+
 a.skipLink {
   left: -999px;
   position: absolute;
@@ -26,6 +30,11 @@ a.skipLink:focus {
   outline: 3px solid red;
   text-align: right;
   z-index: 999;
+}
+
+.navbar {
+  margin: -8px;
+  height: 10vh;
 }
 
 .container {
