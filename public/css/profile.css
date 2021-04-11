@@ -1,0 +1,18 @@
+#container {
+  margin-left: 150px;
+}
+
+.page-font {
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+.innerDiv {
+  margin-left: 20px;
+}
+.total {
+  margin-top: 25px;
+}
+
+a {
+  text-decoration: none;
+}

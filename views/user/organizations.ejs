@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<link href="css/style.css" rel="stylesheet">
+<link href="/css/style.css" rel="stylesheet">
 
 <% layout('layout3') %>
 
     <div class="container">
-        <div class="navbar">
-        <header class="position" >
+        <header class="navbar navig position" >
             <a href="#mainContent" class="skipLink">Jump to main content</a>
             <nav role="navigation">
-               <div class="menu-icon">
+               <div class="menu-icon1">
                   <i class="fa fa-bars fa-2x"></i>
                </div>
                   <div>
                      <a class="logo" href="/">Green Thumbs</a>
                   </div>
-                  <div>
-                     <ul class="menu">
+                  <div class="menu">
+                     <ul>
                         <li><a href="/about">Climate Change Awareness</a></li>
                         <li><a href="/reviews">Reviews</a></li>
                         <li><a href="/login">Login</a></li>
@@ -24,8 +23,7 @@
                   </div>
                </nav>
          </header>
-         </div>
-        <div id="page-content-wrapper">
+        <div id="page-content-wrapper" role="main" >
             <div class="bodyDiv">
                 <h2>Organizations</h2>
                 <% for (var i=0; i < data.length; i++) { %>
@@ -51,6 +49,7 @@
                         </div>
                     </div>
                     <% } %>
+                    <hr/>
             </div>
             <form action="" method="post">
                 <div class="form-group ">
