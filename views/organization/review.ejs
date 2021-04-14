@@ -2,13 +2,13 @@
 <% layout('layout3') %>
 
     <div id="wrapper">
-        <div id="sidebar-wrapper" role="navigation">
+        <div id="sidebar-wrapper">
             <div class="sidebar-brand">
                 <a href="/home">Green Thumbs</a>
             </div>
             <ul class="sidebar-nav">
-                <img src="/uploads/plc.png" class="img-responsive img-circle profile_img" alt="">
-                <div class="profile_info" tabindex="0">
+                <img src="http://placehold.it/100x100" class="img-responsive img-circle profile_img" alt="">
+                <div class="profile_info">
                     <span>Welcome Back, </span>
                     <h2>
                         <%= user.fullname %>
@@ -16,30 +16,43 @@
                 </div>
                 <li>
                     <a href="/home">
-                        <i class="fa fa-home"> Home</i>
+                        <i class="fa fa-home">Home</i>
                     </a>
                     <a href="/organizations">
-                        <i class="fa fa-building-o"> Organizations</i>
+                        <i class="fa fa-building-o">Organizations</i>
                     </a>
-                    <a href="/organization/search">
-                        <i class="fa fa-search"> Search Organizations</i>
+                    <a href="">
+                        <i class="fa fa-search">Search Organizations</i>
                     </a>
                 </li>
             </ul>
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <a href="#menu-toggle" class="btn tog-menu" id="menu-toggle">Toggle Menu</a>
+                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right nav_bar">
-                <li class="logout-button"><a href="/logout">Log Out</a></li>
+                <li><a href="/logout">Log Out</a></li>
             </ul>
         </div>
         <div id="page-content-wrapper">
+            <!-- <div class="ul_links">
+                <ul>
+                    <li>
+                        <a href="/home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/home">Organization</a>
+                    </li>
+                    <li>
+                        <a href="/home">Register Organization</a>
+                    </li>
+                </ul>
+            </div> -->
             <div class="bodyDiv">
-                <h2 tabindex="0">Create a Review / Rating</h2>
+                <h2>Create a Review / Rating</h2>
 
                 <% if (hasMsg) { %>
                     <div class="alert alert-success">
@@ -47,10 +60,10 @@
                     </div>
                     <% } %>
 
-                        <form action="" method="POST" role="form">
+                        <form action="" method="POST">
                             <input class="form-control" id="id" value="<%= data._id %>" type="hidden">
                             <div class="form-group">
-                                <h3 tabindex="0"    >Organization: <%= data.name %>
+                                <h3>Organization: <%= data.name %>
                                 </h3>
                                 <input type="hidden" id="receiver" class="form-control" name="receiver"
                                     value="<%= data.name %>">
@@ -60,8 +73,8 @@
 
                             <div class="form-group">
                                 <div id="error"></div>
-                                <label for="" tabindex="0">Rating</label>
-                                <div class="col-sm-12" id="thumb_rating" tabindex="0">
+                                <label for="">Rating</label>
+                                <div class="col-sm-12" id="thumb_rating">
                                     <img id="thumb1" class="thumb" src="/images/empty.png" alt="thumb" title="Terrible">
                                     <img id="thumb2" class="thumb" src="/images/empty.png" alt="thumb" title="Bad">
                                     <img id="thumb3" class="thumb" src="/images/empty.png" alt="thumb" title="Average">
@@ -73,17 +86,18 @@
                                 </div>
                             </div>
 
-                            <div tabindex="0" class="form-group">
+                            <div class="form-group">
                                 <br><br><br>
                                 <label for="">Review</label>
                                 <textarea name="review" id="review" class="form-control" rows="5" cols="100"></textarea>
                             </div>
 
-                            <div tabindex="0" class="form-group">
-                                <input type="submit" value="Submit" class="form-control btn button-ting" id="rate">
+                            <div class="form-group">
+                                <input type="submit" value="Submit" class="form-control btn btn-primary" id="rate">
                             </div>
                         </form>
             </div>
 
         </div>
+    </div>
     </div>

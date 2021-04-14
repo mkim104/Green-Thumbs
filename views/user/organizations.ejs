@@ -7,7 +7,7 @@
         <header class="navbar navig position" >
             <a href="#mainContent" class="skipLink">Jump to main content</a>
             <nav role="navigation">
-               <div class="menu-icon1 menu-icon">
+               <div class="menu-icon1">
                   <i class="fa fa-bars fa-2x"></i>
                </div>
                   <div>
@@ -23,10 +23,9 @@
                   </div>
                </nav>
          </header>
-        <div id="page-content-wrapper" class="loc-font" role="main" >
+        <div id="page-content-wrapper" role="main" >
             <div class="bodyDiv">
-                <h2 tabindex="0">Organizations</h2>
-                <hr/>
+                <h2>Organizations</h2>
                 <% for (var i=0; i < data.length; i++) { %>
                     <div class="col-xs-12 col-md-6 col-lg-4 organizationListDiv">
                         <div class="organization-info-container">
@@ -50,8 +49,9 @@
                         </div>
                     </div>
                     <% } %>
+                    <hr/>
             </div>
-            <form action="" method="post" role="form">
+            <form action="" method="post">
                 <div class="form-group ">
                     <input id="" class="form-control" name="search" type="text" placeholder="Type company name" style="margin-bottom:20px;">
                 </div>

@@ -38,7 +38,7 @@ a.skipLink:focus {
   height: 10vh;
 }
 .textWrapper {
-  height: 90vh;
+  /* height: 80vh; */
   display: flex;
   align-items: center;
   justify-content: center;
