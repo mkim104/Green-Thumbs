@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <link href="/css/style.css" rel="stylesheet">
 <link href="/css/profile.css" rel="stylesheet">
 
@@ -32,10 +33,62 @@
                 <div class="row mainDiv" style="margin-top:30px">
                     <div class="innerDiv">
                         <div class="col-md-5" style="margin-bottom: 30px;">
+=======
+<link href="/css/org-profile.css" rel="stylesheet">
+
+
+<% layout('layout3') %>
+    <div id="wrapper">
+        <div id="sidebar-wrapper" role="navigation">
+            <div class="sidebar-brand">
+                <a href="/home">Green Thumbs</a>
+            </div>
+            <ul class="sidebar-nav">
+                <img src="/uploads/plc.png" class="img-responsive img-circle profile_img" alt="profile picture">
+                <div class="profile_info" tabindex="0">
+                    <span >Welcome Back, </span>
+                    <h2>
+                        <%= user.fullname %>
+                    </h2>
+                </div>
+                <li>
+                    <a href="/home">
+                        <i class="fa fa-home"> Home</i>
+                    </a>
+                    <a href="/organizations">
+                        <i class="fa fa-building-o"> Organizations</i>
+                    </a>
+                    <a href="/organization/search">
+                        <i class="fa fa-search"> Search Organizations</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <a href="#menu-toggle" class="btn tog-menu" id="menu-toggle">Toggle Menu</a>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right nav_bar">
+                <li class="logout-button"><a href="/logout">Log Out</a></li>
+            </ul>
+        </div>
+        <div id="page-content-wrapper">
+            <div class="bodyDiv" role="main">
+                <h2 tabindex="0">Organization Profile</h2>
+                <div class="form-groups">
+                    <a href="/organizations" class="form-control btn button-tings"> Back </a>
+                </div>  
+                <div class="row mainDiv">
+                    <div class="innerDiv" role="">
+                        <div class="col-md-3" style="margin-bottom: 30px;">
+>>>>>>> 461cc57792426277453657344f373bca0f8f575a
                             <img src="/uploads/<%= data.image %>" class="organizationListItemLogo" alt="Company image">
-                            <h3>
+                            <h3 tabindex="0">
                                 <%= data.name %>
                             </h3>
+<<<<<<< HEAD
                             <i class="fa fa-building-o">
                                 <span class="page-font">
                                     <%= data.sector %>
@@ -46,6 +99,14 @@
                                 <span class="page-font">
                                     <%= data.city %>, <%= data.country %>
                                 </span>
+=======
+                            <i tabindex="0" class="fa fa-building-o">
+                                <%= data.sector %>
+                            </i>
+                            <br>
+                            <i tabindex="0" class="fa fa-map-marker">
+                                <%= data.city %>, <%= data.country %>
+>>>>>>> 461cc57792426277453657344f373bca0f8f575a
                             </i>
                             <br>
                             <i class="fa fa-external-link">
@@ -53,19 +114,33 @@
                                         <%= data.name%>'s website
                                     </a></span>
                             </i>
+<<<<<<< HEAD
                         </div>
                         <div class="col-md-7 colDiv">
                             <h3>Average Thumbs: <b>
                                     <%= average %> / 5.0
                                 </b>
                             </h3>
+=======
+                            <br><br>
+                            <a href="/review/<%= data._id %>" class="btn">Create a Review / Rating</a><br>
+                            <br>
+                            <h4 tabindex="0"><b>Average Thumbs:</b><br><br>
+                                <%= average %> / 5.0
+                            </h4>
+>>>>>>> 461cc57792426277453657344f373bca0f8f575a
                             <span class="thumb" data-score="<%= average %>"></span>
                             <p style="margin-left:30px">
                                 Based on <%= data.ratingNumber.length %> review(s)
                             </p>
                             <br>
+<<<<<<< HEAD
                             <h4><b>Reviews (<%= data.ratingNumber.length %>):</b></h4>
                             <div class="review-container" style="margin-left:30px">
+=======
+                            <h4 tabindex="0"><b>Reviews:</b></h4>
+                            <div tabindex="0" class="review-container">
+>>>>>>> 461cc57792426277453657344f373bca0f8f575a
                                 <% for (var i=0; i < data.organizationRating.length; i++) { %>
                                     <div class="review-card" style="margin-bottom: 5px;">
                                         <div class="review-name">
@@ -82,11 +157,36 @@
                                     <% } %>
                             </div>
                         </div>
+<<<<<<< HEAD
                         <div class="form-group">
                             <a href="/reviews" class="form-control btn button-ting"> Back </a>
                         </div>
                     </div>
 
+=======
+                        <div class="col-md-9 colDiv">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="count">
+                                        <h1 tabindex="0">
+                                            <%= data.ratingNumber.length %> Ratings
+                                        </h1>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 total-thumb">
+                                    <div class="count">
+                                        <p tabindex="0">
+                                            <%= data.ratingSum %> Total Thumbs
+                                        </p>                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                            
+>>>>>>> 461cc57792426277453657344f373bca0f8f575a
                 </div>
             </div>
 
