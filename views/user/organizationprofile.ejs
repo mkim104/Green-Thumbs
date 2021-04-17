@@ -6,30 +6,30 @@
 
     <div id="container">
         <div class="navbar">
-            <header class="position">
+            <header class="position" >
                 <a href="#mainContent" class="skipLink">Jump to main content</a>
                 <nav role="navigation">
-                    <div class="menu-icon">
-                        <i class="fa fa-bars fa-2x"></i>
-                    </div>
-                    <div>
-                        <a class="logo" href="/">Green Thumbs</a>
-                    </div>
-                    <div>
-                        <ul class="menu">
+                   <div class="menu-icon">
+                      <i class="fa fa-bars fa-2x"></i>
+                   </div>
+                      <div>
+                         <a class="logo" href="/">Green Thumbs</a>
+                      </div>
+                      <div>
+                         <ul class="menu">
                             <li><a href="/about">Climate Change Awareness</a></li>
                             <li><a href="/reviews">Reviews</a></li>
                             <li><a href="/login">Login</a></li>
                             <li><a href="/signup">Sign Up</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </header>
-        </div>
+                         </ul>
+                      </div>
+                   </nav>
+             </header>
+             </div>
         <div id="page-content-wrapper" class="page-font">
             <div class="bodyDiv">
                 <h2>Organization Profile</h2>
-                <div class="row mainDiv" style="margin-top:30px">
+                <div class="row mainDiv">
                     <div class="innerDiv">
                         <div class="col-md-4" style="margin-bottom: 30px;">
                             <img src="/uploads/<%= data.image %>" class="organizationListItemLogo" alt="Company image">
@@ -37,56 +37,50 @@
                                 <%= data.name %>
                             </h3>
                             <i class="fa fa-building-o">
-                                <span class="page-font">
-                                    <%= data.sector %>
-                                </span>
+                                <span class="page-font"><%= data.sector %></span>
                             </i>
                             <br>
                             <i class="fa fa-map-marker">
-                                <span class="page-font">
-                                    <%= data.city %>, <%= data.country %>
-                                </span>
+                                <span class="page-font"> <%= data.city %>, <%= data.country %> </span>
                             </i>
                             <br>
                             <i class="fa fa-external-link">
                                 <span class="website"><a href="http://<%= data.website %>" target="_blank">
-                                        <%= data.name%>'s website
-                                    </a></span>
+                                    <%= data.name%>'s website
+                                </a></span>
                             </i>
-                        </div>
-                        <div class="col-md-7 colDiv">
-                            <h3>Average Thumbs: <b>
-                                    <%= average %> / 5.0
-                                </b>
-                            </h3>
+                            <h4>Average Thumbs: <%= average %>
+                            </h4>
                             <span class="thumb" data-score="<%= average %>"></span>
-                            <p style="margin-left:30px">
-                                Based on <%= data.ratingNumber.length %> review(s)
+                            <p>
+                                <%= data.ratingNumber.length %> review(s) total
                             </p>
-                            <br>
-                            <h4><b>Reviews (<%= data.ratingNumber.length %>):</b></h4>
-                            <div class="review-container" style="margin-left:30px">
-                                <% for (var i=0; i < data.organizationRating.length; i++) { %>
-                                    <div class="review-card" style="margin-bottom: 5px;">
-                                        <div class="review-name">
-                                            Name: <%= data.organizationRating[i].userFullname %>
-                                        </div>
-                                        <div class="review-rating">
-                                            Rating: <%= data.organizationRating[i].userRating %>
-                                        </div>
-                                        <div class="review-content">
-                                            Review: <%= data.organizationRating[i].userReview %>
-                                        </div>
+                        </div>
+                        <div class="col-md-9 colDiv">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="count">
+                                        <h1>
+                                            <%= data.ratingNumber.length %> Ratings
+                                        </h1>
+                                        <h3>Total Ratings Received</h3>
                                     </div>
-                                    <br>
-                                    <% } %>
+                                </div>
+
+                                <div class="col-md-4 total">
+                                    <div class="count">
+                                        <p>
+                                            <%= data.ratingSum %> Total Thumbs
+                                        </p>
+                                        <p>Total Thumbs Received</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <a href="/reviews" class="form-control btn button-ting"> Back </a>
-                        </div>
                     </div>
-
+                    <div class="form-group">
+                        <a href="/reviews" class="form-control btn button-ting"> Back </a>
+                    </div>                
                 </div>
             </div>
 
