@@ -5,6 +5,7 @@ I would HIGHLY suggest you also look into a powerpoint that we also put in to se
 ***IMPORTANT***
 Please also email me (moon_hwan_kim@brown.edu) if you want to test the application. I need to put you as a test user in order to give you login functionality. You also need a facebook account for this.
 
+When you go to your directory, run npm install: 
 
 Please make sure you have the following libraries installed. Please also make sure to keep the versions the same. 
 	"async": "^3.2.0",
