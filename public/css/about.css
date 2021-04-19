@@ -50,6 +50,11 @@ a.skipLink:focus {
   /* line-height: 3vh; */
 }
 
+.climate-source {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
 .subtitle {
   font-size: 2.5vw;
   font-weight: 300;
