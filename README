@@ -1,0 +1,48 @@
+Readme:
+
+I would HIGHLY suggest you also look into a powerpoint that we also put in to see how the code works if you are confused.
+
+***IMPORTANT***
+Please also email me (moon_hwan_kim@brown.edu) if you want to test the application. I need to put you as a test user in order to give you login functionality. You also need a facebook account for this.
+
+When you go to your directory, run npm install: 
+
+Please make sure you have the following libraries installed. Please also make sure to keep the versions the same. 
+	"async": "^3.2.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.2.0",
+    "connect-mongodb-session": "^2.4.1",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "ejs-mate": "^3.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "formidable": "^1.2.2",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.0",
+    "nodemon": "^2.0.7",
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
+    "passport-google": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "underscore": "^1.12.1"
+
+Please make sure you have the MongoDB database running on your local device. Or else the information will not save to your database. I suggest install robomongo and setting up a server. 
+
+
+Then type npm start into terminal and go to localhost at port 8000
+
+Do not be scared if you see a picture of one of our lovely teammates as your profile picture. This was a placeholder.
+
+
+Individual Contributions:
+
+Moon Hwan Kim: Backend Development/setting up and designing the architecture of the code and libraries/database to use. 
+
+Suhye Park: Backend Development focusing on implementing company profiles and rating systems.
+
+Ermias Genet: Front-End Team, designing the pages after user has logged in/focusing on reviews.
+
+Tomi Madarikan: Front-End Team, designing home page/pages before logging in along with accessibility requirements.
